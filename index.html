@@ -1,0 +1,2306 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makaan - Real Estate</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- <script defer src="script.js"></script> -->
+
+
+
+    <style>
+
+
+         /* * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+     .logo {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #00a676;
+        }
+        
+        .logo img {
+            width: 40px;
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        
+        .nav-links li {
+            position: relative;
+            margin: 0 15px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .nav-links a:hover {
+            color: #00a676;
+        }
+        
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            list-style: none;
+            padding: 10px 0;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        .dropdown-menu li {
+            padding: 8px 20px;
+        }
+        
+        .dropdown-menu a {
+            color: #333;
+        }
+        
+        .dropdown-menu a:hover {
+            color: #00a676;
+        }
+        
+        .add-property {
+            background: #00a676;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .add-property:hover {
+            background: #00865a;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+         */
+        /* Responsive */
+        /* @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+        
+            .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+        
+            .menu-toggle {
+                display: block;
+            }
+        }
+    */
+        
+/* ubdate navbar */
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+             background: #002b5b; 
+             /* color: skyblue; */
+             /* background: white; */
+            padding: 15px 20px;
+              color: white;  
+             /* color: black; */
+        } 
+
+        /* .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            color:black;
+        } */
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo img {
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+             color: white; 
+            /* color: black; */
+            font-size: 16px;
+            padding: 5px 10px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f8b400;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background: white;
+            top: 30px;
+            left: 0;
+            min-width: 150px;
+            list-style: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 5px 0;
+        }
+
+        .dropdown-menu li {
+            padding: 10px;
+        }
+
+        .dropdown-menu a {
+            color: #002b5b;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .add-property {
+            background: #f8b400;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #002b5b;
+            font-weight: bold;
+        }
+
+        .menu-toggle {
+            font-size: 28px;
+            cursor: pointer;
+            display: none;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #002b5b;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .nav-links li {
+                padding: 10px;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+ 
+
+
+
+
+
+
+
+
+ .search-container{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     height: 25vh; 
+    margin: 0;
+}
+
+.search-container {
+    background-color: #00b894;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+}
+
+.search-container input,
+.search-container select,
+.search-container button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.search-container input {
+    width: 200px;
+}
+
+.search-container select {
+    width: 150px;
+}
+
+.search-container button {
+    background-color: #12223d;
+    color: white;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #0a1529;
+}
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.property-section {
+    padding: 50px 20px;
+}
+
+h2 {
+    font-size: 28px;
+    color: #222;
+}
+
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+   .property-card {
+    background: #e8fdf5;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+} 
+
+ .property-card img {
+    width: 80px;
+    height: 80px;
+    transition: filter 0.3s ease;
+} 
+
+.property-card h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #222;
+}
+
+.property-card p {
+    font-size: 14px;
+    color: #007f5f;
+    font-weight: bold;
+}
+
+
+.property-card:hover img {
+    filter: brightness(0) saturate(100%) invert(42%) sepia(66%) saturate(512%) hue-rotate(115deg);
+   
+}
+
+
+
+
+
+.property-card {
+    background-color: #f8f9fa; /* Default background */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.property-card:hover {
+    background-color: #00b894; /* Green background on hover */
+    color: white; /* Change text color if needed */
+}
+
+
+
+.icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #e3f2fd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px;
+}
+
+.icon img {
+    width: 40px;
+    height: 40px;
+}
+
+
+
+
+
+.two {
+    /* display: grid; */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.property-card {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition: 0.3s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.property-card:hover {
+    background: #00b894;
+    color: white;
+}
+
+span, h1{
+    font-size: 50px;
+    font-weight:bold;
+}
+
+
+
+
+
+
+
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+  .property-section1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    max-width: 1100px;
+    margin: auto;
+    background: white;
+}
+
+ .image-container {
+    flex: 1; 
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+
+
+  ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+ ul li {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+ button {
+    background: #00a86b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #007a55;
+}
+
+
+
+
+@media (max-width: 1024px) {
+    .property-section1 {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .image-container img {
+        width: 100%;
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+
+
+
+
+ 
+/* General Styles */
+.three {
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Section */
+.property-listing {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.header h2 {
+    font-size: 28px;
+    color: #083d77;
+}
+
+/* Filter Buttons */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.filter-btn {
+    padding: 10px 15px;
+    border: 2px solid #00a86b;
+    background: white;
+    color: #00a86b;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.filter-btn.active {
+    background: #00a86b;
+    color: white;
+}
+
+.filter-btn:hover {
+    background: #00a86b;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filter-btn {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+/* Section */
+.property-listing {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 28px;
+    color: #083d77;
+}
+
+/* Filter Buttons */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.filter-btn {
+    padding: 10px 15px;
+    border: 2px solid #00a86b;
+    background: white;
+    color: #00a86b;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.filter-btn.active {
+    background: #00a86b;
+    color: white; 
+}
+
+.filter-btn:hover {
+    background: #00a86b;
+    color: white;
+}
+
+
+ 
+
+.listing-card .details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: gray;
+    margin-top: 10px;}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filter-btn {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+
+.apartment-button {
+    display: inline-block;
+    background: #dfffe1; /* Light green background */
+    color: #008c4a; /* Dark green text */
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+  /* Card Styling */
+  .listing-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .listing-card:hover {
+            transform: scale(1.05);
+        }
+
+        .listing-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .listing-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #28a745;
+            color: white;
+            padding: 5px 10px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .listing-category {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 3px 8px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .listing-details {
+            padding: 15px;
+        }
+
+        .listing-details h5 {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .listing-price {
+            color: #28a745;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .listing-meta {
+            display: flex;
+            /* justify-content: space-between; */
+            /* font-size: 14px; */
+            /* font-size: 7px; */
+            color: #555;
+        }
+
+
+.details{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #555;
+    border-top: 1px dashed #28a745; /* Dotted green border */
+    border-bottom: 1px dashed #28a745; /* Dotted green border */
+
+    padding-top: 8px;
+}
+
+
+.details p {
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+    border-right: 1px dashed #28a745;
+    border-left: 1px dashed #28a745;/* Dotted vertical border */
+}
+
+.details p :last-child {
+    border-right: none; /* Remove border for last item */
+}
+
+
+/* pcard */
+ /* * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+          .body1 {
+            background-color: #f5fdf7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        } 
+
+          .contact-container1 {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 900px;
+            width: 100%;
+        } 
+
+        .contact-image {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .contact-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .contact-content {
+            flex: 1;
+            padding: 30px;
+            text-align: left;
+        }
+
+        .contact-content h2 {
+            color: #002b5b;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .contact-content p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .call-btn {
+            background-color: #16a34a;
+            color: #fff;
+        }
+
+        .call-btn:hover {
+            background-color: #12813d;
+        }
+
+        .appointment-btn {
+            background-color: #0f172a;
+            color: #fff;
+        }
+
+        .appointment-btn:hover {
+            background-color: #1e293b;
+        }
+
+        .buttons i {
+            margin-right: 8px;
+        } */
+
+        /* Responsive Design */
+        /* @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+        } */
+
+
+
+/* agent */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .body2 {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            color: #002b5b;
+        }
+
+        .section-title p {
+            font-size: 16px;
+            color: #666;
+            max-width: 600px;
+            margin: 10px auto;
+        }
+
+        .agents-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .agent-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 250px;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .agent-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .agent-info {
+            padding: 15px;
+        }
+
+        .agent-info h3 {
+            font-size: 18px;
+            color: #002b5b;
+            margin-bottom: 5px;
+        }
+
+        .agent-info p {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            font-size: 16px;
+            color: #fff;
+            background: #16a34a;
+            padding: 8px;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: #12813d;
+        }
+
+        /* Unique classes for different agent cards */
+        .agent-1 .social-icons a { background: #0d6efd; }
+        .agent-2 .social-icons a { background: #dc3545; }
+        .agent-3 .social-icons a { background: #f39c12; }
+        .agent-4 .social-icons a { background: #28a745; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .agents-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+
+        /* prof */
+
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .body5 {
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .header-section {
+            margin-bottom: 20px;
+        }
+
+        .header-section h2 {
+            font-size: 28px;
+            color: #002b5b;
+        }
+
+        .header-section p {
+            font-size: 16px;
+            color: #666;
+            max-width: 600px;
+            margin: 10px auto;
+        }
+
+        .reviews-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .review-card {
+            background: #e6faf2;
+            border-radius: 10px;
+            padding: 20px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .review-content {
+            border: 1px dashed #b3e0d6;
+            padding: 15px;
+            border-radius: 8px;
+            color: #555;
+        }
+
+        .client-details {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .client-details img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .client-details h4 {
+            font-size: 16px;
+            color: #002b5b;
+            margin: 0;
+        }
+
+        .client-details p {
+            font-size: 14px;
+            color: #777;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .review-card {
+                padding: 15px;
+            }
+        }
+    
+
+
+    
+    
+     /* footer  */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    .body0 {
+        background-color: #f8f9fa;
+    }
+
+    .footer {
+        background-color: #002b5b;
+        color: white;
+        padding: 40px 20px;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .footer-column {
+        flex: 1;
+        min-width: 200px;
+        margin-bottom: 20px;
+    }
+
+    .footer-column h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .footer-column ul {
+        list-style: none;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 8px;
+    }
+
+    .footer-column ul li a {
+        color: white;
+        text-decoration: none;
+        opacity: 0.8;
+        transition: 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+        opacity: 1;
+    }
+
+    .contact-info p {
+        margin: 5px 0;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .social-icons a {
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+        opacity: 0.7;
+    }
+
+    .photo-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .photo-gallery img {
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+    }
+
+    .newsletter input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    .newsletter button {
+        width: 100%;
+        margin-top: 10px;
+        padding: 8px;
+        border: none;
+        background: #00c896;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .newsletter button:hover {
+        background: #009f74;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 20px;
+        padding-top: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .footer-container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .social-icons {
+            justify-content: center;
+        }
+
+        .photo-gallery {
+            justify-content: center;
+        }
+    }
+    
+
+
+
+    /* update 3 button */
+
+      /* Responsive Styles */
+      @media (max-width: 600px) {
+            .search-container {
+                flex-direction: column;
+            }
+
+            .search-container input,
+            .search-container select,
+            .search-container button {
+                width: 100%;
+            }
+        }
+
+
+
+/* updatep card */
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .body9 {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .contact-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .agent-image img {
+            width: 250px;
+            border-radius: 10px;
+        }
+
+        .contact-details {
+            flex: 1;
+            text-align: left;
+        }
+
+        .contact-details h2 {
+            font-size: 22px;
+            color: #002b5b;
+            margin-bottom: 10px;
+        }
+
+        .contact-details p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .action-buttons a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .call-action {
+            background: #007bff;
+        }
+
+        .appointment-action {
+            background: #28a745;
+        }
+
+        .call-action:hover {
+            background: #0056b3;
+        }
+
+        .appointment-action:hover {
+            background: #1e7e34;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .agent-image img {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .action-buttons a {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+   
+    
+
+
+    /* aro */
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            height: 200vh; /* Just for testing scroll */
+            background-color: #f0f0f0;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #28a745;
+            color: white;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.3s, transform 0.3s;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-top:hover {
+            background: #218838;
+        }
+
+
+</style>
+    
+    
+    
+
+
+</head>
+<body>
+   
+
+
+             <!-- <nav class="navbar">
+                <div class="logo">
+
+
+                   
+              <img src="img/icon-deal.png"alt="Makaan Logo">
+             <span>Markaan</span>
+                   
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li class="dropdown">
+                        <a href="#">Property ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Buy</a></li>
+                            <li><a href="#">Rent</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Pages ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                   <li>  <button class="add-property" style="position: relative;bottom: 30px;">Add Property</button> </li>
+                </ul>
+                <div class="menu-toggle">&#9776;</div>
+            </nav>
+           
+ -->
+
+
+
+
+
+
+
+
+
+
+ <nav class="navbar">
+    <div class="logo">
+        <img src="img/icon-deal.png" alt="Makaan Logo">
+        <span>Markaan</span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li class="dropdown">
+            <a href="#">Property ▼</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Buy</a></li>
+                <li><a href="#">Rent</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">Pages ▼</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Testimonials</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+        <li><button class="add-property">Add Property</button></li>
+    </ul>
+    <div class="menu-toggle">&#9776;</div>
+</nav>
+
+
+
+
+
+
+
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+    });
+</script>
+
+
+
+
+<!-- aro -->
+<button class="scroll-top" id="scrollTopBtn">&#x2191;</button>
+
+<script>
+    const scrollBtn = document.getElementById("scrollTopBtn");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            scrollBtn.classList.add("show");
+        } else {
+            scrollBtn.classList.remove("show");
+        }
+    });
+
+    scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- </div>
+    </header> -->
+    
+    <section class="hero container mt-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1 >Find A <span class="text-success" >Perfect Home</span> To Live With Your Family</h1>
+                <p >Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
+                <button id="readMoreBtn">Get Started</button>
+            </div>
+             
+                <div class="col-md-6">
+                 <img src="img/carousel-1.jpg" class="img-fluid" alt=""> 
+                <!-- <img src="img/carousel-1.jpg" class="img-fluid" alt="Luxury House"> -->
+                <img src="img/carousel-2.jpg" class="img-fluid" alt="Luxury House">
+            </div>
+        </div>
+    </section>
+    
+    <!-- <section class="search-bar container mt-4 p-4 bg-light rounded shadow-sm">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Search Keyword">
+            </div>
+            <div class="col-md-4">
+                <select class="form-control">
+                    <option selected>Property Type</option>
+                    <option>Apartment</option>
+                    <option>Villa</option>
+                    <option>House</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Location">
+            </div>
+        </div>
+    </section> -->
+
+    <!-- <section class="container mt-4">
+        <div class="row g-3">
+        <div class="search-bar">
+            <input type="text" class="form-control" placeholder="Search Keyword">
+            <select class="form-control">
+                <option selected>Property Type</option>
+                <option>Apartment</option>
+                <option>Villa</option>
+                <option>House</option>
+            </select>
+            <input type="text" class="form-control" placeholder="Location">
+            <button class="btn">Search</button>
+        </div>
+        </div>
+    </section> -->
+
+     
+     <!-- <section class="container mt-4">
+        <div class="search-bar">
+            <input type="text" class="form-control" id="searchKeyword" placeholder="Search Keyword">
+            <select class="form-control" id="propertyType">
+                <option selected>Property Type</option>
+                <option>Apartment</option>
+                <option>Villa</option>
+                <option>House</option>
+            </select>
+            <input type="text" class="form-control" id="location" placeholder="Location">
+            <button class="btn" onclick="performSearch()">Search</button>
+        </div>
+    </section>
+
+    <script>
+    
+        function performSearch() {
+            let keyword = document.getElementById("searchKeyword").value;
+            let type = document.getElementById("propertyType").value;
+            let location = document.getElementById("location").value;
+
+            if (keyword || type !== "Property Type" || location) {
+                alert(`Searching for:\nKeyword: ${keyword}\nType: ${type}\nLocation: ${location}`);
+            } else {
+                alert("Please enter at least one search criteria.");
+            }
+        }
+    </script> -->
+
+    <div class="search-container">
+        <!-- <div class="col-md-6"> -->
+        <!-- <div class="one"> -->
+        <input type="text" id="keyword" placeholder="Search Keyword">
+        
+        <select id="property-type">
+            <option value="">Property Type</option>
+            <option value="house">House</option>
+            <option value="apartment">Apartment</option>
+            <option value="commercial">Commercial</option>
+        </select>
+
+        <select id="location">
+            <option value="">Location</option>
+            <option value="new-york">New York</option>
+            <option value="los-angeles">Los Angeles</option>
+            <option value="chicago">Chicago</option>
+            
+        </select>
+<!-- </div> -->
+        <button id="search-btn">Search</button>
+    </div>
+<script>
+    document.getElementById("search-btn").addEventListener("click", function () {
+        const keyword = document.getElementById("keyword").value;
+        const propertyType = document.getElementById("property-type").value;
+        const location = document.getElementById("location").value;
+    
+        alert(`Searching for: 
+        Keyword: ${keyword} 
+        Property Type: ${propertyType} 
+        Location: ${location}`);
+    });
+    </script>
+
+
+
+
+
+
+<section class="property-section">
+    <h1>Property Types</h1>
+    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit.</p>
+    <div class="two">
+    <div class="property-grid">
+        <div class="property-card">
+            <div class="icon">
+            <img src="img/icon-apartment.png" alt="Apartment">
+
+            </div>
+            
+            <h3 >Apartment</h3>
+            <p>123 Properties</p>
+        </div>
+
+        <div class="property-card">
+            <div class="icon">
+            <img src="img/icon-villa.png" alt="Villa"></div>
+            <h3>Villa</h3>
+            <p>123 Properties</p>
+        </div>
+
+        <div class="property-card">
+            <div class="icon">
+            <img src="img/icon-house.png" alt="Home"></div>
+            <h3>Home</h3>
+            <p>123 Properties</p>
+        </div>
+
+        <div class="property-card">
+            <div class="icon">
+            <img src="img/icon-housing.png" alt="Office"></div>
+
+            <h3>Office</h3>
+            <p>123 Properties</p>
+        </div>
+
+        <div class="property-card">
+            <div class="icon">
+            <img src="img/icon-building.png" alt="Building"></div>
+            <h3>Building</h3>
+            <p>123 Properties</p>
+        </div>
+
+        <div class="property-card">
+            <div class="icon">
+            <img src="img/icon-neighborhood.png" alt="Townhouse"></div>
+
+            <h3>Townhouse</h3>
+            <p>123 Properties</p>
+        </div>
+
+        <div class="property-card">
+            <div class="icon">
+            <img src="img/icon-condominium.png" alt="Shop"></div>
+
+            <h3>Shop</h3>
+            <p>123 Properties</p>
+        </div>
+
+        <div class="property-card">
+            <div class="icon">
+            <img src="img/icon-luxury.png" alt="Garage"></div>
+            <h3>Garage</h3>
+            <p>123 Properties</p>
+        </div>
+    </div>
+    </div>
+</section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Property Types Loaded Successfully!");
+});
+</script>
+
+
+
+
+ <section class="property-section1">
+    <div class="image-container">
+        <img src="img/about.jpg" alt="Luxury House">
+    </div>
+    <div class="content">
+        <span>#1 <span>Place To Find The</span> Perfect Property</span>
+        <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos.</p>
+        <ul>
+            <li style="position: relative;right: 33px;">✔ Tempor erat elitr rebum at clita</li>
+            <li style="position: relative;right: 35px;">✔ Aliqu diam amet diam et eos</li>
+            <li>✔ Clita duo justo magna dolore erat amet</li>
+        </ul>
+        <button id="readMoreBtn">Read More</button>
+    </div>
+</section>
+
+<script>
+document.getElementById("readMoreBtn").addEventListener("click", function() {
+    alert("More property details coming soon!");
+});
+</script>
+
+
+
+<!-- <div class="three"> -->
+<section class="property-listing">
+    <div class="three">
+    <div class="container">
+        <div class="header">
+            <h2>Property Listing</h2>
+            <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filters">
+            <button class="filter-btn active">Featured</button>
+            <button class="filter-btn">For Sell</button>
+            <button class="filter-btn">For Rent</button>
+        </div>
+    </div>
+    </div>
+</section>
+
+
+
+
+        <!----- Property Cards -->
+       <!-----<div class="property-grid">
+            <div class="property-card" data-category="sell">
+                <img src="img/property-1.jpg"alt="House">
+                <span class="tag sell">For Sell</span>
+                <span class="apartment-button" style="position: relative;bottom: 20px;">Apartment</span>
+
+                <h3>$12,345</h3>
+                <p>Golden Urban House For Sell</p>
+                <p>📍 123 Street, New York, USA</p>
+                 <div class="details" > 
+                    <p>📏 1000Sqft</p>
+                    <p>🛏 3 Bed</p>
+                    <p>🛁 2 Bath</p>
+                </div>
+            </div>
+
+            <div class="property-card" data-category="rent">
+                <img src="img/property-2.jpg" alt="Villa">
+                <span class="tag rent">For Rent</span>
+                <span class="category">Villa</span>
+                <h3>$12,345</h3>
+                <p>Golden Urban House For Rent</p>
+                <p>📍 123 Street, New York, USA</p>
+                <div class="details">
+                    <p>📏 2000 Sqft</p>
+                    <p>🛏 4 Bed</p>
+                    <p>🛁 3 Bath</p>
+                </div>
+            </div>
+
+            <div class="property-card" data-category="sell">
+                <img src="img/property-3.jpg" alt="Office">
+                <span class="tag sell" >For Sell</span>
+                <span class="category">Office</span>
+                <h3>$12,345</h3>
+                <p>Golden Urban House For Sell</p>
+                <p>📍 123 Street, New York, USA</p>
+                <div class="details">
+                    <p>📏 1500 Sqft</p>
+                    <p>🛏 3 Bed</p>
+                    <p>🛁 2 Bath</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const propertyCards = document.querySelectorAll(".property-card");
+
+    filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            const filter = button.getAttribute("data-filter");
+
+            propertyCards.forEach((card) => {
+                if (filter === "all" || card.getAttribute("data-category") === filter) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    });
+});-->
+
+
+
+<div class="container mt-4">
+    <div class="row">
+
+        <!-- Listing 1 -->
+        <div class="col-md-4 col-sm-6 mb-4">
+            <div class="listing-card position-relative">
+                <img src="img/property-1.jpg" alt="House" class="listing-image">
+                <span class="listing-badge">For Sale</span>
+                <span class="apartment-button" style="position: relative;bottom: 20px; right: 80px;">Apartment</span>
+                <!-- <span class="listing-category">Apartment</span> -->
+                <div class="listing-details">
+                    <span class="listing-price">$12,345</span>
+                    <h5>Golden Urban House For Sale</h5>
+                    <p><i class="bi bi-geo-alt"></i>📍 123 Street, New York, USA</p>
+
+                    <!-- <div class="listing-meta">
+                        <span><i class="bi bi-arrows-expand"></i> 1000 Sqft</span>
+                        <span><i class="bi bi-house"></i> 3 Bed</span> 
+                        <span><i class="bi bi-house"></i> 3 Bed</span> </div> -->
+
+                   <div class="details" > 
+                    <p>📏 1000Sqft</p>
+                    <p>🛏 3 Bed</p>
+                    <p>🛁 2 Bath</p>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Listing 2 -->
+        <div class="col-md-4 col-sm-6 mb-4">
+            <div class="listing-card position-relative">
+                <img src="img/property-2.jpg" alt="Villa" class="listing-image">
+                <span class="listing-badge bg-primary">For Rent</span>
+                <span class="apartment-button" style="position: relative;bottom: 20px; right: 80px;">Villa</span>
+
+                <!-- <span class="listing-category">Villa</span> -->
+                <div class="listing-details">
+                    <span class="listing-price">$14,500</span>
+                    <h5>Luxury Villa with Pool</h5>
+                    <p><i class="bi bi-geo-alt"></i>📍 456 Avenue, Los Angeles, USA</p>
+                    <!-- <div class="listing-meta">
+                        <span><i class="bi bi-arrows-expand"></i> 1200 Sqft</span>
+                        <span><i class="bi bi-house"></i> 4 Bed</span>
+                        <span><i class="bi bi-bath"></i> 3 Bath</span>
+                    </div> -->
+
+                    <div class="details">
+                        <p>📏 2000 Sqft</p>
+                        <p>🛏 4 Bed</p>
+                        <p>🛁 3 Bath</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Listing 3 -->
+        <div class="col-md-4 col-sm-6 mb-4">
+            <div class="listing-card position-relative">
+                <img src="img/property-3.jpg" alt="Office" class="listing-image">
+                <span class="listing-badge">For Sale</span>
+                <span class="apartment-button" style="position: relative;bottom: 20px; right: 80px;">Office</span>
+<!-- 
+                <span class="listing-category">Office</span> -->
+                <div class="listing-details">
+                    <span class="listing-price">$8,900</span>
+                    <h5>Modern Office Space</h5>
+                    <p><i class="bi bi-geo-alt"></i>📍 789 Blvd, Chicago, USA</p>
+                    <!-- <div class="listing-meta">
+                        <span><i class="bi bi-arrows-expand"></i> 800 Sqft</span>
+                        <span><i class="bi bi-house"></i> 2 Rooms</span>
+                        <span><i class="bi bi-bath"></i> 1 Bath</span>
+                    </div> -->
+
+                    <div class="details">
+                        <p>📏 1500 Sqft</p>
+                        <p>🛏 3 Bed</p>
+                        <p>🛁 2 Bath</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+ <!-- Listing 4 -->
+ <div class="col-md-4 col-sm-6 mb-4">
+    <div class="listing-card position-relative">
+        <img src="img/property-4.jpg" alt="Office" class="listing-image">
+        <span class="listing-badge">For Sale</span>
+        <span class="apartment-button" style="position: relative;bottom: 20px; right: 80px;">Office</span>
+<!-- 
+        <span class="listing-category">Office</span> -->
+        <div class="listing-details">
+            <span class="listing-price">$8,900</span>
+            <h5>Modern Office Space</h5>
+            <p><i class="bi bi-geo-alt"></i>📍 789 Blvd, Chicago, USA</p>
+            <!-- <div class="listing-meta">
+                <span><i class="bi bi-arrows-expand"></i> 800 Sqft</span>
+                <span><i class="bi bi-house"></i> 2 Rooms</span>
+                <span><i class="bi bi-bath"></i> 1 Bath</span>
+            </div> -->
+
+            <div class="details">
+                <p>📏 1500 Sqft</p>
+                <p>🛏 3 Bed</p>
+                <p>🛁 2 Bath</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+ <!-- Listing 5 -->
+ <div class="col-md-4 col-sm-6 mb-4">
+    <div class="listing-card position-relative">
+        <img src="img/property-5.jpg" alt="Office" class="listing-image">
+        <span class="listing-badge">For Sale</span>
+        <span class="apartment-button" style="position: relative;bottom: 20px; right: 80px;">Office</span>
+<!-- 
+        <span class="listing-category">Office</span> -->
+        <div class="listing-details">
+            <span class="listing-price">$8,900</span>
+            <h5>Modern Office Space</h5>
+            <p><i class="bi bi-geo-alt"></i>📍 789 Blvd, Chicago, USA</p>
+            <!-- <div class="listing-meta">
+                <span><i class="bi bi-arrows-expand"></i> 800 Sqft</span>
+                <span><i class="bi bi-house"></i> 2 Rooms</span>
+                <span><i class="bi bi-bath"></i> 1 Bath</span>
+            </div> -->
+
+            <div class="details">
+                <p>📏 1500 Sqft</p>
+                <p>🛏 3 Bed</p>
+                <p>🛁 2 Bath</p>
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- Listing 6 -->
+ <div class="col-md-4 col-sm-6 mb-4">
+    <div class="listing-card position-relative">
+        <img src="img/property-6.jpg" alt="Office" class="listing-image">
+        <span class="listing-badge">For Sale</span>
+        <span class="apartment-button" style="position: relative;bottom: 20px; right: 80px;">Office</span>
+<!-- 
+        <span class="listing-category">Office</span> -->
+        <div class="listing-details">
+            <span class="listing-price">$8,900</span>
+            <h5>Modern Office Space</h5>
+            <p><i class="bi bi-geo-alt"></i>📍 789 Blvd, Chicago, USA</p>
+            <!-- <div class="listing-meta">
+                <span><i class="bi bi-arrows-expand"></i> 800 Sqft</span>
+                <span><i class="bi bi-house"></i> 2 Rooms</span>
+                <span><i class="bi bi-bath"></i> 1 Bath</span>
+            </div> -->
+
+            <div class="details">
+                <p>📏 1500 Sqft</p>
+                <p>🛏 3 Bed</p>
+                <p>🛁 2 Bath</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+</div>
+<!-- </script> -->
+
+
+
+<!-- p, card -->
+  <!-- <div class="contact-container1">
+    <div class="body1">
+    <div class="contact-image">
+        <img src="img/call-to-action.jpg" alt="Agent">
+    </div>
+    <div class="contact-content">
+        <h2>Contact With Our Certified Agent</h2>
+        <p>Eirmod sed ipsum dolor sit rebmu magna erat. Tempor lorem kasd vero ipsum sit sit diam justo sed vero dolor duo.</p>
+        <div class="buttons">
+            <a href="#" class="call-btn"><i class="fas fa-phone"></i> Make A Call</a>
+            <a href="#" class="appointment-btn"><i class="fas fa-calendar-alt"></i> Get Appointment</a>
+        </div>
+    </div>
+    </div>
+</div> -->
+
+
+<!-- ubdate p card -->
+
+
+
+<div class="body9">
+<div class="contact-wrapper">
+    <div class="agent-image">
+        <img src="img/call-to-action.jpg" alt="Agent">
+    </div>
+    <div class="contact-details">
+        <h2>Contact With Our Certified Agent</h2>
+        <p>Eirmod sed ipsum dolor sit rebmu magna erat. Tempor lorem kasd vero ipsum sit sit diam justo sed vero dolor duo.</p>
+        <div class="action-buttons">
+            <a href="#" class="call-action"><i class="fas fa-phone"></i> Make A Call</a>
+            <a href="#" class="appointment-action"><i class="fas fa-calendar-alt"></i> Get Appointment</a>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+<!-- agent -->
+ <div class="body2">
+<div class="section-title">
+    <h2>Property Agents</h2>
+    <p>Eirmod sed ipsum dolor sit rebmu labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit.</p>
+</div>
+
+<div class="agents-container">
+    <div class="agent-card agent-1">
+        <img src="img/team-1.jpg" alt="Agent 1">
+        <div class="agent-info">
+            <h3>Full Name</h3>
+            <p>Designation</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="agent-card agent-2">
+        <img src="img/team-2.jpg" alt="Agent 2">
+        <div class="agent-info">
+            <h3>Full Name</h3>
+            <p>Designation</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="agent-card agent-3">
+        <img src="img/team-3.jpg" alt="Agent 3">
+        <div class="agent-info">
+            <h3>Full Name</h3>
+            <p>Designation</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="agent-card agent-4">
+        <img src="img/team-4.jpg" alt="Agent 4">
+        <div class="agent-info">
+            <h3>Full Name</h3>
+            <p>Designation</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+<!-- ptof -->
+<div class="body5">
+  <div class="header-section">
+    <h2>Our Clients Say!</h2>
+    <p>Eirmod sed ipsum dolor sit rebmu labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit.</p>
+</div>
+
+ <div class="reviews-container">
+    <div class="review-card">
+        <div class="review-content">
+            <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
+        </div>
+        <div class="client-details">
+            <img src="img/testimonial-1.jpg" alt="Client 1">
+            <div>
+                <h4>Client Name</h4>
+                <p>Profession</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="reviews-container">
+        <div class="review-card">
+            <div class="review-content">
+                <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
+            </div>
+            <div class="client-details">
+                <img src="img/testimonial-3.jpg" alt="Client 1">
+                <div>
+                    <h4>Client Name</h4>
+                    <p>Profession</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="review-card">
+        <div class="review-content">
+            <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
+        </div>
+        <div class="client-details">
+            <img src="img/testimonial-2.jpg" alt="Client 2">
+            <div>
+                <h4>Client Name</h4>
+                <p>Profession</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<!-- 
+footer -->
+<div class="body0">
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column contact-info">
+            <h3>Get In Touch</h3>
+            <p>📍 123 Street, New York, USA</p>
+            <p>📞 +012 345 67890</p>
+            <p>📧 info@example.com</p>
+            <div class="social-icons">
+                <a href="#">🔵</a>
+                <a href="#">⚫</a>
+                <a href="#">🔴</a>
+                <a href="#">🔵</a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Photo Gallery</h3>
+            <div class="photo-gallery">
+                <img src="img/property-1.jpg" alt="Photo 1">
+                <img src="img/property-2.jpg" alt="Photo 2">
+                <img src="img/property-3.jpg" alt="Photo 3">
+                <img src="img/property-4.jpg" alt="Photo 4">
+                <img src="img/property-5.jpg" alt="Photo 5">
+                <img src="img/property-6.jpg" alt="Photo 6">
+            </div>
+        </div>
+
+        <div class="footer-column newsletter">
+            <h3>Newsletter</h3>
+            <p>Subscribe to get updates</p>
+            <input type="email" placeholder="Your email">
+            <button>Sign Up</button>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© Your Site Name, All Rights Reserved. Designed by <a href="#" style="color: white;">Your Company</a></p>
+    </div>
+</footer>
+</div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
